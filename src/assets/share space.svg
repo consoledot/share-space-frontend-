@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 655 440" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+    <g transform="matrix(1,0,0,1,-547.633,-455.277)">
+        <g transform="matrix(0.753929,0,0,0.753929,196.119,200.84)">
+            <g transform="matrix(0.770118,0,0,0.770118,289.734,175.968)">
+                <g transform="matrix(1,0,0,1,-42.3978,0)">
+                    <g transform="matrix(0.73719,-0.453346,0.217087,0.353007,-42.0201,607.663)">
+                        <path d="M1105.75,292.771L490.934,292.771L760.613,366.769L1105.75,457.048L1105.75,292.771Z" style="fill:rgb(0,78,159);"/>
+                    </g>
+                    <g transform="matrix(-0.73719,-0.453346,-0.217087,0.353007,1711.68,607.663)">
+                        <path d="M1105.75,292.771L490.934,292.771L760.613,366.769L1105.75,457.048L1105.75,292.771Z" style="fill:rgb(0,78,159);"/>
+                    </g>
+                </g>
+                <g transform="matrix(1,0,0,0.572506,-39.666,413.211)">
+                    <g>
+                        <rect x="526.521" y="891.823" width="611.154" height="74.766" style="fill:rgb(0,78,159);"/>
+                    </g>
+                </g>
+                <g transform="matrix(1,0,0,1,-107.568,-1.68075)">
+                    <path d="M1152.32,880.884L1205.58,880.884L1205.58,968.27L1141.86,968.27L1152.32,880.884ZM1205.58,632.368L1182.04,632.368L1185.06,607.111L1205.58,436.036L1205.58,632.368Z" style="fill:rgb(0,78,159);"/>
+                </g>
+                <g transform="matrix(1,0,0,1,-107.568,-1.68075)">
+                    <path d="M647.685,880.884L658.136,968.27L594.423,968.27L594.423,880.884L647.685,880.884ZM594.423,632.368L594.423,436.036L614.942,607.111L617.963,632.368L594.423,632.368Z" style="fill:rgb(0,78,159);"/>
+                </g>
+            </g>
+            <g transform="matrix(2.73565,0,0,2.73565,-1620.65,-1286.97)">
+                <text x="760.652px" y="766.589px" style="font-family:'Bahnschrift', sans-serif;font-size:50px;fill:rgb(0,78,159);">S<tspan x="790.95px 824.397px " y="766.589px 766.589px ">HA</tspan>RE S<tspan x="962.971px 991.902px 1022.32px 1052.77px " y="766.589px 766.589px 766.589px 766.589px ">PACE</tspan></text>
+            </g>
+        </g>
+    </g>
+</svg>
