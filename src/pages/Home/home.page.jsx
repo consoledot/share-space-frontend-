@@ -1,10 +1,8 @@
 import  './home.style.scss'
 import headerlogo from '../../assets/space-logo.svg'
-import Navigation from '../../components/Navigation/navigation.component'
 import Button from '../../components/Button/button.component'
 const Home = ()=>(
     <div>
-        <Navigation/>
         <header>
             <div className="header-text">
                 <h1>Your Last Stop In Getting Your Desired Space</h1>
@@ -15,6 +13,7 @@ const Home = ()=>(
                 <img src={headerlogo} alt=""/>
             </div>
         </header>
+        <section></section>
     </div>
 )
 export default Home

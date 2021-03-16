@@ -1,0 +1,26 @@
+.loginpage{
+    height: 90vh;
+     .form__group{
+        max-width: 25%;
+        margin: 5% auto;
+        .login__text{
+            &>*{
+                margin-bottom: 1rem;
+            }
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            margin-top: 2rem;
+            &>*{
+                margin-bottom: 1rem;
+            }
+            .forget__password{
+                text-align: right;
+            }
+            .register{
+                text-align: center;
+            }
+        }
+     }
+}

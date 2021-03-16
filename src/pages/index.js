@@ -1,3 +1,3 @@
-import LoginPage from './Login/login.page'
+import Login from './Login/login.page'
 import Home from './Home/home.page'
-export {LoginPage, Home}
+export {Login, Home}
