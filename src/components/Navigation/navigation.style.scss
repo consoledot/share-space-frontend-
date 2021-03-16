@@ -1,0 +1,29 @@
+.navigation{
+    display: flex;
+    justify-content: space-between;
+    height: 4vh;
+    align-items: center;
+    padding: 1rem 3rem;
+    .logo{
+         height: 100%;
+         cursor: pointer;
+        img{
+            height: 160%;
+        }
+    }
+    nav{
+        ul{
+            display: flex;
+             list-style: none;
+            align-items: center;
+            li{
+                padding: 0 2.5rem;
+                cursor: pointer;
+                &:hover{
+                    color:rgb(133, 133, 228);
+                }
+
+            }
+        }
+    }
+}

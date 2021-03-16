@@ -1,0 +1,21 @@
+header{
+    display: flex;
+    justify-content: space-around;
+    height: 90vh;
+    padding: 0 5rem;
+    .header-text{
+        margin: auto 0;
+        text-align: center;
+        &>*{
+            margin: 1.5rem 0;
+        }
+    }
+    .header__image{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img{
+            height: 85%;
+        }
+    }
+}
