@@ -1,7 +1,8 @@
-import style from './navigation.module.scss'
+import './navigation.style.scss'
 import logo from '../../assets/share space.svg'
+import Button from '../Button/button.component'
 const Navigation = ()=>(
-    <div className={style.navigation}>
+    <div className="navigation">
         <div className="logo">
             <img src={logo} alt=""/>
         </div>
@@ -9,8 +10,8 @@ const Navigation = ()=>(
             <ul>
                 <li>Browse Spaces</li>
                 <li>List your Space</li>
-                <li>Login</li>
-                <li>Get Started</li>
+                <li className="login">Login</li>
+                <Button name="Get Started"/>
             </ul>
         </nav>
     </div>
