@@ -12,7 +12,7 @@ const Navigation = ({match,history})=>(
                 <li>Browse Spaces</li>
                 <li>List your Space</li>
                <Link to='/login'><li className="login">Login</li></Link> 
-                <Button name="Get Started"/>
+                <Link to="/sign-up"><Button name="Get Started"/></Link>
             </ul>
         </nav>
     </div>

@@ -1,0 +1,20 @@
+.registerpage{
+    height: 90vh;
+    .register__group{
+        max-width: 25%;
+        margin: 5% auto;
+        .register__text{
+            &>*{
+                margin-bottom: 1rem;
+            }
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            margin-top: 2rem;
+            &>*{
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}
