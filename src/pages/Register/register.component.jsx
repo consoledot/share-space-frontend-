@@ -2,8 +2,10 @@ import {useState} from 'react'
 import './register.style.scss'
 import FormInput from '../../components/FormInput/forminput.component'
 import Button from '../../components/Button/button.component'
+import axios from 'axios'
  
 const Register = ()=>{
+    let data = {}
     const [user, setUser ] = useState({
         name:"",
         email:"",
@@ -12,9 +14,27 @@ const Register = ()=>{
     })
     const handleInput =async(event)=>{
         const {value,name} = event.target
-        let newUser ={...user,[name]:value}
-        await setUser(newUser)
+        data ={...user,[name]:value}
+        await setUser({...user,[name]:value})
         console.log(user)
+        console.log(data)
+    }
+    const Submit = (event)=>{
+        event.preventDefault()
+        console.log({...user,number:parseInt(user.number)})
+        axios.post("https://75b933f329f3.ngrok.io/api/auth/register",user)
+            .then(res=>{
+                console.log(res)
+                console.log(res.data)
+            })
+            .catch(err=>{
+                console.log(err)
+            })
+        // axios({
+        //     method:"post",
+        //     url:"https://cors.bridged.cc/http://localhost:8080/api/auth/register",
+        //     data:data
+        // })
     }
         return(
             <div className="registerpage">
@@ -23,7 +43,7 @@ const Register = ()=>{
                             <h3>Sign Up</h3>
                             <p>Log in to continue</p>
                     </div>
-                    <form action="">
+                    <form action="" onSubmit={Submit}> 
                         <FormInput type="text" placeholder="First Name" name="name" onchange={handleInput} />
                         <FormInput type="text" placeholder="Last Name" />
                         <FormInput type="email" placeholder="Email" name="email" onchange={handleInput} />

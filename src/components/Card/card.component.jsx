@@ -8,9 +8,9 @@ const Card =()=>(
             <p className="type">Warehouse</p>
         </div>
         <div className="info">
-            <p className="name">Ddaaf aga</p>
+            <p className="name">The Usman Dan Store</p>
             <p className="location">Abuja</p>
-            <p className="price">$1000,10100</p>
+            <p className="price">$1,000,000</p>
         </div>
     </div>
 )
