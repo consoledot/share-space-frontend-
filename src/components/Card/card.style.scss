@@ -1,0 +1,22 @@
+.card{
+    height: 300px;
+    width: 300px;
+    background-color: white;
+    border-radius: 4px;
+    overflow: hidden;
+    .image{
+        position: relative;
+        img{
+            width: 100%;
+        }
+        .type{
+            position: absolute;
+            top: 10px;
+            color: white;
+            background-color: rgb(133, 133, 228);
+            padding: 0.2rem 0.3rem;
+            margin-left: .5rem;
+            border-radius: 2px;
+        }
+    }
+}

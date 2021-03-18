@@ -13,8 +13,8 @@ const LoginPage = ()=>(
                 <FormInput type="email" placeholder="Email"/>
                 <FormInput type="password" placeholder="Password"/>
                 <Button name="Login" type="submit"/>
-                <Link to="/forget-password" className="forget__password">Forget Password?</Link>
-                <p className="register">Don't have  an account? <Link to='/register'>Sign Up</Link></p>
+                <Link to="/forgot-password" className="forget__password">Forget Password?</Link>
+                <p className="register">Don't have  an account? <Link to='/sign-up'>Sign Up</Link></p>
             </form>
         </div>
     </div>
