@@ -1,29 +1,50 @@
-import {useState} from 'react'
+import {useState,useRef} from 'react'
 import './login.style.scss'
+import {withRouter, useHistory} from 'react-router-dom'
 import FormInput from '../../components/FormInput/forminput.component'
 import Button from '../../components/Button/button.component'
 import {Link} from 'react-router-dom'
-import axios from 'axios'
+import Authentication from '../../auth/auth'
 const LoginPage = ()=>{
+    const history = useHistory()
+    const email = useRef()
+    const password = useRef()
+    const {login} = Authentication()
     const [user, setUser] = useState({
         email:"",
         password:""
     })
+    const [error, setError] = useState({
+        state:false,
+        message:""
+    })
+    const [name,setName] = useState("log in")
     const handleInput = (event)=>{
         const {name, value} = event.target
         setUser({...user,[name]:value})
     }
-    const Submit = (event)=>{
+    const Submit = async(event)=>{
         event.preventDefault()
-        axios.post("https://75b933f329f3.ngrok.io/api/auth/login",user)
-            .then(res=>{
-                console.log(res)
-                console.log(res.data)
-            })
-            .catch(err=>{
-                console.log(err)
-            })
-    }
+        setName("loading")
+            const data = await login(user)
+            console.log(data)
+            if(data.token){
+                history.push("/spaces")
+            }else{
+                setName("log in")
+                email.current.value = ''
+                password.current.value = ''
+                setUser({
+                    email:"",
+                    password:""
+                })
+                setError({
+                    state:true,
+                    message:data.error
+                })
+            }
+        }
+        
     return(
     <div className='loginpage'>
         <div className="form__group">
@@ -32,9 +53,12 @@ const LoginPage = ()=>{
                 <p>Log in to continue</p>
             </div>
             <form action="" onSubmit={Submit}>
-                <FormInput type="email" placeholder="Email" name="email" onchange={handleInput}/>
-                <FormInput type="password" placeholder="Password"name="password" onchange={handleInput}/>
-                <Button name="Login" type="submit"/>
+                 <p className="error" style={{
+                     visibility:`${!error.state ? 'hidden':"visible"}`
+                 }}>{error.message}</p>
+                <FormInput type="email" placeholder="Email" inputRef={email} name="email" onchange={handleInput}/>
+                <FormInput type="password" placeholder="Password" inputRef={password} name="password" onchange={handleInput}/>
+                <Button name={name} type="submit"/>
                 <Link to="/forgot-password" className="forget__password">Forget Password?</Link>
                 <p className="register">Don't have  an account? <Link to='/sign-up'>Sign Up</Link></p>
             </form>
@@ -43,4 +67,4 @@ const LoginPage = ()=>{
 )
     }
 
-export default LoginPage
+export default withRouter(LoginPage)

@@ -1,40 +1,30 @@
 import {useState} from 'react'
+import {useHistory} from 'react-router-dom'
 import './register.style.scss'
 import FormInput from '../../components/FormInput/forminput.component'
 import Button from '../../components/Button/button.component'
-import axios from 'axios'
- 
+import Authentication from '../../auth/auth'
+
 const Register = ()=>{
-    let data = {}
+    const {signup} = Authentication()
+    const history = useHistory()
     const [user, setUser ] = useState({
         name:"",
         email:"",
         password:"",
         number:""
     })
-    const handleInput =async(event)=>{
+    const handleInput =(event)=>{
         const {value,name} = event.target
-        data ={...user,[name]:value}
-        await setUser({...user,[name]:value})
-        console.log(user)
-        console.log(data)
+        setUser({...user,[name]:value})
     }
-    const Submit = (event)=>{
+    const Submit = async(event)=>{
         event.preventDefault()
-        console.log({...user,number:parseInt(user.number)})
-        axios.post("https://75b933f329f3.ngrok.io/api/auth/register",user)
-            .then(res=>{
-                console.log(res)
-                console.log(res.data)
-            })
-            .catch(err=>{
-                console.log(err)
-            })
-        // axios({
-        //     method:"post",
-        //     url:"https://cors.bridged.cc/http://localhost:8080/api/auth/register",
-        //     data:data
-        // })
+        const data = await signup(user)
+        if(data.successful){
+            history.push("/spaces")
+        }
+        console.log(data)
     }
         return(
             <div className="registerpage">
