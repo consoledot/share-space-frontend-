@@ -1,6 +1,9 @@
 import  './home.style.scss'
 import headerlogo from '../../assets/space-logo.svg'
 import Button from '../../components/Button/button.component'
+import office from '../../assets/office.jpg'
+import warehouse from '../../assets/warehouse.jpg'
+import apartment from '../../assets/apartment.jpg'
 const Home = ()=>(
     <div>
         <header>
@@ -13,7 +16,40 @@ const Home = ()=>(
                 <img src={headerlogo} alt=""/>
             </div>
         </header>
-        <section></section>
+        <section className="explore">
+             <div className="text">
+                    <h3>Explore your Options</h3>
+                    <p>Check out our extensive list of spaces for your use</p>
+                </div>
+            <div className="inner-explore">
+                <div className="options">
+                    <div className="bg"></div>
+                    <img src={office}/>
+                    <div className="text">
+                        <p>Work Space</p>
+                    </div>
+                </div>
+                <div className="options">
+                <div className="bg"></div>
+                    <img src={warehouse}/>
+                    <div className="text">
+                        <p>Warehouses</p>
+                    </div>
+                </div>
+                <div className="options">
+                <div className="bg"></div>
+                    <img src={apartment}/>
+                    <div className="text">
+                        <p>Apartments</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section className="owner">
+                <h2>Are your a property owner?</h2>
+                <p>Join our network of owners like you who uses our platform to get costumers tenants </p>
+                <Button name="List Your Space"/>
+        </section>
     </div>
 )
 export default Home

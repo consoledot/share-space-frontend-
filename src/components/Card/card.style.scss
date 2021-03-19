@@ -1,0 +1,45 @@
+.card{
+    height: 250px;
+    width: 250px;
+    background-color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    overflow: hidden;
+    font-family: 'Quicksand', sans-serif;
+    &:hover{
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    }
+    .image{
+        position: relative;
+        img{
+            width: 100%;
+        }
+        .type{
+            position: absolute;
+            top: 20px;
+            color: white;
+            background-color: rgb(133, 133, 228);
+            padding: 0.2rem 0.3rem;
+            margin-left: .5rem;
+            border-radius: 2px;
+        }
+    }
+    .info{
+        padding: 0.4rem;
+        &>*{
+            margin:0.3rem 0;
+        }
+        .name{
+            font-weight: bolder;
+        }
+        .location{
+            font-weight: bold;
+            font-size: 13px;
+        }
+        .price{
+            color:rgb(133, 133, 228);
+            font-weight: bold;
+        }
+    }
+
+}

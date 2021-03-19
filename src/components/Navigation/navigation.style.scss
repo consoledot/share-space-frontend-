@@ -7,8 +7,10 @@
     .logo{
          height: 100%;
          cursor: pointer;
+         display: flex;
+         align-items: center;
         img{
-            height: 160%;
+            height: 170%;
         }
     }
     nav{
@@ -19,7 +21,11 @@
             li{
                 padding: 0 2.5rem;
                 cursor: pointer;
+                color: black;
                 &:hover{
+                    color:rgb(133, 133, 228);
+                }
+                &.login{
                     color:rgb(133, 133, 228);
                 }
 

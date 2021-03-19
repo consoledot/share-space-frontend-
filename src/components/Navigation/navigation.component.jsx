@@ -9,8 +9,9 @@ const Navigation = ({match,history})=>(
         </div>
         <nav>
             <ul>
-                <li>Browse Spaces</li>
+                <Link to="/spaces"><li>Browse Spaces</li></Link>
                 <li>List your Space</li>
+                <Link to="/about-us"><li>About Us</li></Link>
                <Link to='/login'><li className="login">Login</li></Link> 
                 <Link to="/sign-up"><Button name="Get Started"/></Link>
             </ul>
