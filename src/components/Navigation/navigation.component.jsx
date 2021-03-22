@@ -7,6 +7,11 @@ const Navigation = ({match,history})=>(
         <div className="logo" onClick={()=>{ history.push("/")}}>
             <img src={logo} alt=""/>
         </div>
+        <div className="menu">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
         <nav>
             <ul>
                 <Link to="/spaces"><li>Browse Spaces</li></Link>

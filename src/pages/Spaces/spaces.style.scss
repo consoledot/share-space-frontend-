@@ -6,3 +6,15 @@
         grid-gap: 1.5rem;
     }
 }
+
+@media screen and (max-width:650px){
+    .spaces{
+        padding: 3rem 1.5rem;
+        .collection{
+            justify-content: center;
+            &>*{
+                margin: 0 auto;
+            }
+        }
+    }
+}

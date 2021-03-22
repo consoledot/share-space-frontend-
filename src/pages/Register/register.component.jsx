@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import {useHistory} from 'react-router-dom'
 import './register.style.scss'
+import {Link} from 'react-router-dom'
 import FormInput from '../../components/FormInput/forminput.component'
 import Button from '../../components/Button/button.component'
 import Authentication from '../../auth/auth'
@@ -41,6 +42,7 @@ const Register = ()=>{
                         <FormInput type="password" placeholder="Password" name="password"onchange={handleInput} />
                         <FormInput type="password" placeholder="Confirm Password"/>
                         <Button name="Sign Up" type="submit"/>
+                        <p className="login">Already a User? <Link to='/login'>Sign In</Link></p>
                     </form>
                 </div>
             </div>

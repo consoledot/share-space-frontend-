@@ -31,3 +31,17 @@
         }
     }
 }
+@media screen and (max-width:650px){
+    .about{
+        padding: 1rem 0.2rem;
+        .details{
+            max-width: 90%;
+        }
+    }
+    .about__img{
+        width: 100%;
+        img{
+            width: 100%;
+        }
+    }
+}

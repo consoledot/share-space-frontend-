@@ -33,3 +33,11 @@
         }
      }
 }
+@media screen and (max-width:650px){
+    .loginpage{
+        .form__group{
+            margin: 20% auto;
+            max-width: 80%;
+        }
+    }
+}
