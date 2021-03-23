@@ -32,7 +32,7 @@ const Register = ()=>{
                 <div className="register__group">
                     <div className="register__text">
                             <h3>Sign Up</h3>
-                            <p>Log in to continue</p>
+                            {/* <p>Log in to continue</p> */}
                     </div>
                     <form action="" onSubmit={Submit}> 
                         <FormInput type="text" placeholder="First Name" name="name" onchange={handleInput} />

@@ -5,7 +5,7 @@ import Navigation from './components/Navigation/navigation.component'
 
 function App() {
   return (
-   <div>
+   <>
      <Navigation/>
        <Switch>
           <Route exact path="/" component={Home}/>
@@ -15,7 +15,7 @@ function App() {
           <Route path="/spaces" component={Spaces}/>
           <Route path="/about-us" component={About}/>
        </Switch>
-   </div>
+   </>
   );
 }
 
