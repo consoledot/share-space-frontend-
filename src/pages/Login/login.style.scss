@@ -2,7 +2,8 @@
     height: 90vh;
      .form__group{
         max-width: 30%;
-        margin: 5% auto;
+        margin: 0 auto;
+        padding: 10% 0;
         .login__text{
             &>*{
                 margin-bottom: 1rem;
@@ -32,4 +33,13 @@
             }
         }
      }
+}
+@media screen and (max-width:650px){
+    .loginpage{
+        .form__group{
+            margin: 0 auto;
+            padding-top: 20%;
+            max-width: 80%;
+        }
+    }
 }

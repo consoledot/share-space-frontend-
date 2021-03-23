@@ -21,6 +21,8 @@ header{
 }
 .explore{
     margin: 2rem 0;
+    padding: 0 0.2rem;
+    
     .text{
         text-align: center;
         &>*{
@@ -85,8 +87,26 @@ header{
 .owner{
     background-color: rgb(192, 192, 228);
     text-align: center;
-    padding: 2rem 0;
+    padding: 2rem 0.2rem;
     &>*{
         margin: 1rem 0;
     }
+}
+@media screen and (max-width:650px){
+    header{
+        padding: 0 0.2rem;
+        .header__image{
+            display: none;
+        }
+    }
+    .explore{
+        .inner-explore{
+            flex-direction: column;
+            align-items: center;
+            .options{
+                width: 20rem;
+            }
+        }
+    }
+  
 }

@@ -2,7 +2,8 @@
     height: 90vh;
     .register__group{
         max-width: 25%;
-        margin: 5% auto;
+        margin: 0 auto;
+        padding: 10% 0;
         .register__text{
             &>*{
                 margin-bottom: 1rem;
@@ -15,6 +16,18 @@
             &>*{
                 margin-bottom: 1rem;
             }
+            .login{
+                text-align: center;
+            }
+        }
+    }
+}
+@media screen and (max-width:650px){
+    .registerpage{
+        .register__group{
+            margin: 0 auto;
+            padding-top: 20%;;
+            max-width: 80%;
         }
     }
 }
