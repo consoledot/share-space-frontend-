@@ -1,6 +1,6 @@
 import './App.css';
 import {Route, Switch} from 'react-router-dom'
-import {Login, Home, Register,ForgetPage,Spaces, About} from './pages'
+import {Login, Home, Register,ForgetPage,Spaces, About,Listing} from './pages'
 import Navigation from './components/Navigation/navigation.component'
 
 function App() {
@@ -14,6 +14,7 @@ function App() {
           <Route path="/forgot-password" component={ForgetPage}/>
           <Route path="/spaces" component={Spaces}/>
           <Route path="/about-us" component={About}/>
+          <Route path="/list-your-space" component={Listing}/>
        </Switch>
    </>
   );

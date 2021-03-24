@@ -4,4 +4,5 @@ import Home from './Home/home.page'
 import ForgetPage from './Forget Password/forget-password.component'
 import Spaces from './Spaces/spaces.component'
 import About from './About/about.component'
-export {Login, Home, Register, ForgetPage, Spaces, About}
+import Listing from './Listing/listing.component'
+export {Login, Home, Register, ForgetPage, Spaces, About,Listing}

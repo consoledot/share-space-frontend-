@@ -1,0 +1,18 @@
+.listing{
+    .header{
+        padding: 7% 0;
+        background-color: rgb(192, 192, 228);
+        text-align: center;
+        button{
+            margin-top: 3rem;
+        }
+    }
+   
+}
+@media screen and (max-width:650px){
+    .listing{
+        .header{
+            padding: 20% 0;
+        }
+    }
+}

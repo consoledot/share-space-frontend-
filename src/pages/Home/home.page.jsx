@@ -1,11 +1,12 @@
 import  './home.style.scss'
 import headerlogo from '../../assets/space-logo.svg'
 import Button from '../../components/Button/button.component'
+import Footer from '../../components/Footer/footer.component'
 import office from '../../assets/office.jpg'
 import warehouse from '../../assets/warehouse.jpg'
 import apartment from '../../assets/apartment.jpg'
 const Home = ()=>(
-    <div>
+    <>
         <header>
             <div className="header-text">
                 <h1>Your Last Stop for Getting Your Desired Space</h1>
@@ -50,6 +51,7 @@ const Home = ()=>(
                 <p>Join our network of owners like you who uses our platform to get costumers tenants </p>
                 <Button name="List Your Space"/>
         </section>
-    </div>
+        <Footer/>
+    </>
 )
 export default Home

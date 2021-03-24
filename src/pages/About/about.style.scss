@@ -1,9 +1,9 @@
 .about{
-    padding: 2rem;
+    padding: 5% 2rem;
     .header-text{
         text-align: center;
         h1{
-            margin: 1rem;
+            margin-top: 5rem;
             text-transform: uppercase;
             color: rgb(155, 152, 152);
         }
@@ -42,6 +42,14 @@
         width: 100%;
         img{
             width: 100%;
+        }
+    }
+    .details{
+        h2{
+            font-size: 19px;
+        }
+        p{
+            font-size: 15px;
         }
     }
 }
