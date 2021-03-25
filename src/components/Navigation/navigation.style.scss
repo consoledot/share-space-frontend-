@@ -1,137 +1,140 @@
-.navigation{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 4vh;
-        padding: 1rem 0;
-        position: fixed; 
-        width: 100vw;
-        z-index: 5;
-        background-color: rgb(246, 246, 248);
-        &.scroll{
-            background-color:white;
-            border-bottom: 1px solid rgb(238, 237, 237);
-        }
-    .menu{
-        display: none;
-        padding-right: 1rem;
-        div{
-            height: 4px;
-            margin: 6px 0;
-            border-radius: 4px;
-            background-color: rgb(133, 133, 228);
-            transition:  all 0.5s ease-in-out;
-            &:nth-child(1){
-                width: 25px;
-            }
-            &:nth-child(2){
-                width: 35px;
-            }
-            &:nth-child(3){
-                width: 20px;
-            }
-        }
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4vh;
+  padding: 1rem 0;
+  position: fixed;
+  width: 100vw;
+  z-index: 5;
+  background-color: rgb(246, 246, 248);
+  &.scroll {
+    background-color: white;
+    border-bottom: 1px solid rgb(238, 237, 237);
+  }
+  .menu {
+    display: none;
+    padding-right: 1rem;
+    div {
+      height: 4px;
+      margin: 6px 0;
+      border-radius: 4px;
+      background-color: rgb(133, 133, 228);
+      transition: all 0.5s ease-in-out;
+      &:nth-child(1) {
+        width: 25px;
+      }
+      &:nth-child(2) {
+        width: 35px;
+      }
+      &:nth-child(3) {
+        width: 20px;
+      }
     }
-    .logo{
-         height: 100%;
-         cursor: pointer;
-         display: flex;
-         align-items: center;
-         padding-left: 1rem;
-        img{
-            height: 120%;
-        }
+  }
+  .logo {
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+    img {
+      height: 120%;
     }
-    nav{
-        padding-right: 2rem;
-        transition: 0.3s ease-in-out;
-        ul{
-            display: flex;
-             list-style: none;
-            align-items: center;
-            li{
-                padding: 0 2.5rem;
-                cursor: pointer;
-                color: black;
-                &:hover{
-                    color:rgb(133, 133, 228);
-                }
-                &.login{
-                    color:rgb(133, 133, 228);
-                }
-
-            }
+  }
+  nav {
+    padding-right: 2rem;
+    transition: 0.3s ease-in-out;
+    ul {
+      display: flex;
+      list-style: none;
+      align-items: center;
+      li {
+        padding: 0 2.5rem;
+        cursor: pointer;
+        color: black;
+        &:hover {
+          color: rgb(133, 133, 228);
         }
+        &.login {
+          color: rgb(133, 133, 228);
+        }
+        &.logout {
+          color: red;
+        }
+      }
     }
+  }
 }
 
-@media screen and (max-width:650px){
-    .navigation{
-        padding: 1rem 0;
+@media screen and (max-width: 650px) {
+  .navigation {
+    padding: 1rem 0;
 
-        .menu{
-            display: block;
-                &.show{
-                    div{
-                        &:nth-child(1){
-                            transform: translate(10px) rotate(45deg);
-                        }
-                        &:nth-child(2) {
-                            transform: translateY(5px)translateX(5px);
-        
-                        }
-        
-                        &:nth-child(3) {
-                            transform: translateY(-20px) translateX(10px) rotate(-45deg);
-                            width: 25px;
-                        }
-                    }
-            }
-           
+    .menu {
+      display: block;
+      &.show {
+        div {
+          &:nth-child(1) {
+            transform: translate(10px) rotate(45deg);
+          }
+          &:nth-child(2) {
+            transform: translateY(5px) translateX(5px);
+          }
+
+          &:nth-child(3) {
+            transform: translateY(-20px) translateX(10px) rotate(-45deg);
+            width: 25px;
+          }
         }
-       nav{
-        display: none;
-           position: absolute;
-           right: 0;
-           top: 100%;
-        //    background-color: rgb(246, 246, 248);
-           z-index: 10;
-           width: 100%;
-           padding-right: 0;
-           &.show{
-            animation: dropdown 0.3s linear ;
-               background-color: red;
-            // transition: all 0.5s ease-in-out;
-               display: block;
-               background-color: rgb(133, 133, 228);
-               ul{
-                   li{
-                       color: white;
-                       .button{
-                           background-color: black;
-                       }
-                   }
-               }
-        }
-           ul{
-            flex-direction: column;
-            padding: 0;
-            justify-content: center;
-            padding: 1rem 0;
-            li{
-                padding: 1rem ;
-            }
-           }
-       }
+      }
     }
+    nav {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      //    background-color: rgb(246, 246, 248);
+      z-index: 10;
+      width: 100%;
+      padding-right: 0;
+      &.show {
+        animation: dropdown 0.3s linear;
+        background-color: red;
+        // transition: all 0.5s ease-in-out;
+        display: block;
+        background-color: rgb(133, 133, 228);
+        ul {
+          li {
+            color: white;
+            .button {
+              background-color: black;
+            }
+            &.logout {
+              color: black;
+            }
+          }
+        }
+      }
+      ul {
+        flex-direction: column;
+        padding: 0;
+        justify-content: center;
+        padding: 1rem 0;
+        li {
+          padding: 1rem;
+        }
+      }
+    }
+  }
 }
-@keyframes dropdown{
-    from{
-        opacity: 0;
-        transform: translateY(-100px);
-    }
-    to{
-        opacity: 1;
-        transform: translateY(0);
-    }
+@keyframes dropdown {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

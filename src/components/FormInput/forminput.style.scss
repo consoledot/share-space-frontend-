@@ -1,4 +1,4 @@
-input{
+input,textarea{
     padding: 1rem 1rem;
     border-radius: 4px;
     border: none;
@@ -11,4 +11,8 @@ input{
     &:hover{
         border: 1px solid rgb(133, 133, 228);
     }
+}
+textarea{
+   height: 100px;
+    resize: none;
 }
