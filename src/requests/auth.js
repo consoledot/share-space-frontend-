@@ -1,9 +1,10 @@
 import axios from "axios"
+import baseURL from "./axios"
 
 const Authentication =()=>{
     const signup = async(data)=>{
         try {
-            const response = await axios.post("https://20ccf7c0f715.ngrok.io/api/auth/register",data)
+            const response = await axios.post(`${baseURL}/api/auth/register`,data)
             const message = response.data
             return message
 
@@ -13,7 +14,7 @@ const Authentication =()=>{
     }
     const login =async(data)=>{
             try{
-                const response = await axios.post("https://20ccf7c0f715.ngrok.io/api/auth/login",data)
+                const response = await axios.post(`${baseURL}/api/auth/login`,data)
                 const  message = response.data
                 return message
             }catch(err){

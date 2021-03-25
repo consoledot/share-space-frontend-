@@ -4,7 +4,7 @@ import './register.style.scss'
 import {Link} from 'react-router-dom'
 import FormInput from '../../components/FormInput/forminput.component'
 import Button from '../../components/Button/button.component'
-import Authentication from '../../auth/auth'
+import Authentication from '../../requests/auth'
 
 const Register = ()=>{
     const {signup} = Authentication()
