@@ -31,6 +31,7 @@ const LoginPage = ({ addToken }) => {
     const data = await login(user);
     console.log(data);
     if (data.token) {
+      localStorage.setItem("token", data.token);
       addToken(data.token);
       history.push("/spaces");
     } else {
@@ -43,8 +44,9 @@ const LoginPage = ({ addToken }) => {
       });
       setError({
         state: true,
-        message: data.error,
+        message: `${data.error ? data.error : "Network Error"}`,
       });
+      return;
     }
   };
 

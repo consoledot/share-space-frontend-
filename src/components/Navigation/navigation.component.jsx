@@ -18,6 +18,11 @@ const Navigation = ({ token, removeToken }) => {
     navigation.current.classList.remove("show");
     menu.current.classList.remove("show");
   };
+  const logOut = () => {
+    removeToken();
+    localStorage.removeItem("token");
+    removeMenu();
+  };
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 40) {
@@ -45,7 +50,6 @@ const Navigation = ({ token, removeToken }) => {
           navigation.current.classList.toggle("show");
           menu.current.classList.toggle("show");
           setShowMenu(!showMenu);
-          //    showMenu ? navigation.current.classList.remove("show") : navigation.current.classList.add("show")
         }}
       >
         <div></div>
@@ -65,13 +69,7 @@ const Navigation = ({ token, removeToken }) => {
           </Link>
           {token ? (
             <>
-              <Link
-                to="/"
-                onClick={() => {
-                  removeToken();
-                  removeMenu();
-                }}
-              >
+              <Link to="/" onClick={logOut}>
                 <li className="logout">Logout</li>
               </Link>
               <Link to="/dashboard" onClick={removeMenu}>
