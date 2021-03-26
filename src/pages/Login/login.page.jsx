@@ -46,7 +46,6 @@ const LoginPage = ({ addToken }) => {
         state: true,
         message: `${data.error ? data.error : "Network Error"}`,
       });
-      return;
     }
   };
 
