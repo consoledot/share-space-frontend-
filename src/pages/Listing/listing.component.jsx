@@ -4,42 +4,33 @@ import Button from "../../components/Button/button.component";
 import FormInput from "../../components/FormInput/forminput.component";
 import Spaces from "../../requests/spaces";
 // import uploadImages from "./uploadImage";
+import { connect } from "react-redux";
 
-const Listing = () => {
+const Listing = ({ token }) => {
   const { addSpace } = Spaces();
   const [imageForm, setImageForm] = useState([]);
   const [details, setDetails] = useState({
     name: "",
     location: "",
     price: "",
+    category: "",
     picture: [],
     description: "",
   });
-  const uploadImages = async (files) => {
+  const uploadImage = async (file) => {
     const formData = new FormData();
-    const urls = [];
-    await files.forEach((file) => {
-      formData.append("file", file);
-      formData.append("upload_preset", "upload");
-      fetch("https://api.cloudinary.com/v1_1/bimbo/upload", {
-        method: "POST",
-        body: formData,
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          urls.push(data.secure_url);
-          setDetails({
-            ...details,
-            picture: [...details.picture, data.secure_url],
-          });
-        });
-    });
-    console.log(urls);
-    return urls;
+    formData.append("file", file);
+    formData.append("upload_preset", "upload");
+    return fetch("https://api.cloudinary.com/v1_1/bimbo/upload", {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((data) => data.secure_url);
   };
   const handleInput = (event) => {
     const { value, name, files } = event.target;
+    console.log(event.target.name);
     if (files) {
       setImageForm([...files]);
     } else {
@@ -49,13 +40,14 @@ const Listing = () => {
   const Submit = async (event) => {
     event.preventDefault();
     console.log("1");
-    const picture = await uploadImages(imageForm);
-    console.log("2");
-    setDetails({ ...details, picture: [...picture] });
-    console.log("3");
-    console.log(details);
-    const data = await addSpace(details);
-    console.log("4");
+    const urls = [];
+    for (let i = 0; i < imageForm.length; i++) {
+      const imagedata = imageForm[i];
+      const imageUrl = await uploadImage(imagedata);
+      urls.push(imageUrl);
+    }
+    // await setDetails({ ...details, picture: urls });
+    const data = await addSpace({ ...details, picture: urls }, token);
     console.log(data);
   };
   return (
@@ -85,6 +77,12 @@ const Listing = () => {
             onchange={handleInput}
           />
           <FormInput
+            type="select"
+            name="category"
+            onchange={handleInput}
+            options={["Apartment", "Office", "Store", "Warehouse", "Others"]}
+          />
+          <FormInput
             name="picture"
             type="file"
             onchange={handleInput}
@@ -102,4 +100,7 @@ const Listing = () => {
     </div>
   );
 };
-export default Listing;
+const mapStateToProps = (state) => ({
+  token: state.token,
+});
+export default connect(mapStateToProps)(Listing);
