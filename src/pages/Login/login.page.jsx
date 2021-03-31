@@ -34,6 +34,10 @@ const LoginPage = ({ addToken, addUser }) => {
       localStorage.setItem("token", data.token);
       addToken(data.token);
       addUser(data.user);
+      setUser({
+        email: "",
+        password: "",
+      });
       history.push("/spaces");
     } else {
       setName("log in");

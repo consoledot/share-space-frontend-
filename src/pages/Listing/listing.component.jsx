@@ -4,14 +4,16 @@ import Button from "../../components/Button/button.component";
 import FormInput from "../../components/FormInput/forminput.component";
 import Spaces from "../../requests/spaces";
 // import uploadImages from "./uploadImage";
+import { connect } from "react-redux";
 
-const Listing = () => {
+const Listing = ({ token }) => {
   const { addSpace } = Spaces();
   const [imageForm, setImageForm] = useState([]);
   const [details, setDetails] = useState({
     name: "",
     location: "",
     price: "",
+    category: "",
     picture: [],
     description: "",
   });
@@ -28,6 +30,7 @@ const Listing = () => {
   };
   const handleInput = (event) => {
     const { value, name, files } = event.target;
+    console.log(event.target.name);
     if (files) {
       setImageForm([...files]);
     } else {
@@ -43,8 +46,9 @@ const Listing = () => {
       const imageUrl = await uploadImage(imagedata);
       urls.push(imageUrl);
     }
-    setDetails({ ...details, picture: urls });
-    const data = await addSpace(details);
+    // await setDetails({ ...details, picture: urls });
+    const data = await addSpace({ ...details, picture: urls }, token);
+    console.log(data);
   };
   return (
     <div className="listing">
@@ -73,6 +77,12 @@ const Listing = () => {
             onchange={handleInput}
           />
           <FormInput
+            type="select"
+            name="category"
+            onchange={handleInput}
+            options={["Apartment", "Office", "Store", "Warehouse", "Others"]}
+          />
+          <FormInput
             name="picture"
             type="file"
             onchange={handleInput}
@@ -90,4 +100,7 @@ const Listing = () => {
     </div>
   );
 };
-export default Listing;
+const mapStateToProps = (state) => ({
+  token: state.token,
+});
+export default connect(mapStateToProps)(Listing);
