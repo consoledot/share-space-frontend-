@@ -15,28 +15,16 @@ const Listing = () => {
     picture: [],
     description: "",
   });
-  const uploadImages = async (files) => {
+  const uploadImage = async (file) => {
     const formData = new FormData();
-    const urls = [];
-    await files.forEach((file) => {
-      formData.append("file", file);
-      formData.append("upload_preset", "upload");
-      fetch("https://api.cloudinary.com/v1_1/bimbo/upload", {
-        method: "POST",
-        body: formData,
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          urls.push(data.secure_url);
-          setDetails({
-            ...details,
-            picture: [...details.picture, data.secure_url],
-          });
-        });
-    });
-    console.log(urls);
-    return urls;
+    formData.append("file", file);
+    formData.append("upload_preset", "upload");
+    return fetch("https://api.cloudinary.com/v1_1/bimbo/upload", {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((data) => data.secure_url);
   };
   const handleInput = (event) => {
     const { value, name, files } = event.target;
@@ -49,14 +37,14 @@ const Listing = () => {
   const Submit = async (event) => {
     event.preventDefault();
     console.log("1");
-    const picture = await uploadImages(imageForm);
-    console.log("2");
-    setDetails({ ...details, picture: [...picture] });
-    console.log("3");
-    console.log(details);
+    const urls = [];
+    for (let i = 0; i < imageForm.length; i++) {
+      const imagedata = imageForm[i];
+      const image = await uploadImage(imagedata);
+      urls.push(image);
+    }
+    setDetails({ ...details, picture: urls });
     const data = await addSpace(details);
-    console.log("4");
-    console.log(data);
   };
   return (
     <div className="listing">
