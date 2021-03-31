@@ -1,0 +1,17 @@
+.info-card {
+  width: 300px;
+  height: 100px;
+  border-radius: 5px;
+  padding: 1rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: whitesmoke;
+  p:nth-child(1) {
+    text-align: center;
+  }
+  p:nth-child(2) {
+    font-size: 25px;
+    margin-bottom: 0;
+  }
+}

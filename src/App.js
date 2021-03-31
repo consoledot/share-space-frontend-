@@ -1,4 +1,5 @@
 import "./App.css";
+import { useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
 import {
   Login,
@@ -11,8 +12,14 @@ import {
   Dashboard,
 } from "./pages";
 import Navigation from "./components/Navigation/navigation.component";
+import { connect } from "react-redux";
+import { addToken } from "./redux/action";
 
-function App() {
+function App({ addToken }) {
+  useEffect(() => {
+    console.log("jha");
+    addToken(localStorage.getItem("token"));
+  });
   return (
     <>
       <Navigation />
@@ -29,5 +36,7 @@ function App() {
     </>
   );
 }
-
-export default App;
+const mapDispatchToProps = (dispatch) => ({
+  addToken: (token) => dispatch(addToken(token)),
+});
+export default connect(null, mapDispatchToProps)(App);

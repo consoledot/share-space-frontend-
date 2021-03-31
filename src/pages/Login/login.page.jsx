@@ -6,8 +6,8 @@ import Button from "../../components/Button/button.component";
 import { Link } from "react-router-dom";
 import Authentication from "../../requests/auth";
 import { connect } from "react-redux";
-import { addToken } from "../../redux/action";
-const LoginPage = ({ addToken }) => {
+import { addToken, addUser } from "../../redux/action";
+const LoginPage = ({ addToken, addUser }) => {
   const history = useHistory();
   const email = useRef();
   const password = useRef();
@@ -33,6 +33,7 @@ const LoginPage = ({ addToken }) => {
     if (data.token) {
       localStorage.setItem("token", data.token);
       addToken(data.token);
+      addUser(data.user);
       history.push("/spaces");
     } else {
       setName("log in");
@@ -46,7 +47,6 @@ const LoginPage = ({ addToken }) => {
         state: true,
         message: `${data.error ? data.error : "Network Error"}`,
       });
-      return;
     }
   };
 
@@ -94,6 +94,7 @@ const LoginPage = ({ addToken }) => {
 };
 const mapDispatchToProps = (dispatch) => ({
   addToken: (token) => dispatch(addToken(token)),
+  addUser: (user) => dispatch(addUser(user)),
 });
 
 export default connect(null, mapDispatchToProps)(LoginPage);
