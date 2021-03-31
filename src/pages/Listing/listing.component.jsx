@@ -40,8 +40,8 @@ const Listing = () => {
     const urls = [];
     for (let i = 0; i < imageForm.length; i++) {
       const imagedata = imageForm[i];
-      const image = await uploadImage(imagedata);
-      urls.push(image);
+      const imageUrl = await uploadImage(imagedata);
+      urls.push(imageUrl);
     }
     setDetails({ ...details, picture: urls });
     const data = await addSpace(details);

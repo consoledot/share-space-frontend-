@@ -1,6 +1,7 @@
 import "./App.css";
 import { useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
+import ProtectedRoute from "./routes/protectedRoutes";
 import {
   Login,
   Home,
@@ -30,8 +31,8 @@ function App({ addToken }) {
         <Route path="/forgot-password" component={ForgetPage} />
         <Route path="/spaces" component={Spaces} />
         <Route path="/about-us" component={About} />
-        <Route path="/list-your-space" component={Listing} />
-        <Route path="/dashboard" component={Dashboard} />
+        <ProtectedRoute path="/list-your-space" component={<Listing />} />
+        <ProtectedRoute path="/dashboard" component={<Dashboard />} />
       </Switch>
     </>
   );
