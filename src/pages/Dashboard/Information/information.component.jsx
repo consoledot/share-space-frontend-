@@ -1,9 +1,10 @@
 import "./information.style.scss";
 import Card from "../Card/card.component";
+import { connect } from "react-redux";
 
-const Information = () => (
+const Information = ({ user }) => (
   <div className="information">
-    <h1>Welcome, Abimbola</h1>
+    <h1>Welcome, {user.name}</h1>
     <div className="card-container">
       <Card name="Your Listed Spaces" number="5" color="blue" />
       <Card name="Applied Spaces" number="3" color="green" />
@@ -12,4 +13,8 @@ const Information = () => (
   </div>
 );
 
-export default Information;
+const mapStateToProps = (state) => ({
+  user: state.user,
+});
+
+export default connect(mapStateToProps)(Information);

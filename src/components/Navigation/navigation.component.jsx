@@ -3,7 +3,7 @@ import { useRef, useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import logo from "../../assets/share space.svg";
 import Button from "../Button/button.component";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import { removeToken } from "../../redux/action";
 
@@ -58,32 +58,32 @@ const Navigation = ({ token, removeToken }) => {
       </div>
       <nav ref={navigation}>
         <ul>
-          <Link to="/spaces" onClick={removeMenu}>
+          <NavLink to="/spaces" onClick={removeMenu}>
             <li>Browse Spaces</li>
-          </Link>
-          <Link to="/list-your-space" onClick={removeMenu}>
+          </NavLink>
+          <NavLink to="/list-your-space" onClick={removeMenu}>
             <li>List your Space</li>
-          </Link>
-          <Link to="/about-us" onClick={removeMenu}>
+          </NavLink>
+          <NavLink to="/about-us" onClick={removeMenu}>
             <li>About Us</li>
-          </Link>
+          </NavLink>
           {token ? (
             <>
-              <Link to="/" onClick={logOut}>
+              <NavLink to="/" onClick={logOut}>
                 <li className="logout">Logout</li>
-              </Link>
-              <Link to="/dashboard" onClick={removeMenu}>
+              </NavLink>
+              <NavLink to="/dashboard" onClick={removeMenu}>
                 <Button name="Dashboard" invert={showMenu} />
-              </Link>
+              </NavLink>
             </>
           ) : (
             <>
-              <Link to="/login" onClick={removeMenu}>
+              <NavLink to="/login" onClick={removeMenu}>
                 <li className="login">Login</li>
-              </Link>
-              <Link to="/sign-up" onClick={removeMenu}>
+              </NavLink>
+              <NavLink to="/sign-up" onClick={removeMenu}>
                 <Button name="Get Started" invert={showMenu} />
-              </Link>
+              </NavLink>
             </>
           )}
         </ul>
