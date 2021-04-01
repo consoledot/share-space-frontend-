@@ -79,6 +79,7 @@ const Listing = ({ token }) => {
           <FormInput
             type="select"
             name="category"
+            placeholder="Space's Category"
             onchange={handleInput}
             options={["Apartment", "Office", "Store", "Warehouse", "Others"]}
           />
@@ -93,6 +94,13 @@ const Listing = ({ token }) => {
             name="description"
             placeholder="Description"
             onchange={handleInput}
+          />
+          <FormInput
+            type="select"
+            name="isNegotiable"
+            placeholder="Negotiable?"
+            onchange={handleInput}
+            options={["Yes", "No"]}
           />
           <Button name="Submit" />
         </form>

@@ -11,6 +11,7 @@ import {
   About,
   Listing,
   Dashboard,
+  Space,
 } from "./pages";
 import Navigation from "./components/Navigation/navigation.component";
 import { connect } from "react-redux";
@@ -29,10 +30,12 @@ function App({ addToken }) {
         <Route path="/login" component={Login} />
         <Route path="/sign-up" component={Register} />
         <Route path="/forgot-password" component={ForgetPage} />
-        <Route path="/spaces" component={Spaces} />
+        <Route exact path="/spaces" component={Spaces} />
         <Route path="/about-us" component={About} />
         <ProtectedRoute path="/list-your-space" component={<Listing />} />
         <ProtectedRoute path="/dashboard" component={<Dashboard />} />
+        {/* <ProtectedRoute path="/spaces/:id" component={<Space />} /> */}
+        <Route path="/spaces/:id" component={Space} />
       </Switch>
     </>
   );

@@ -36,7 +36,7 @@ const LoginPage = ({ addToken, addUser }) => {
       addUser(data.user);
       setUser({
         email: "",
-        password: "",
+        passlword: "",
       });
       history.push("/spaces");
     } else {

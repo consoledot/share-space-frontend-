@@ -22,8 +22,7 @@ const FormInput = ({
     return (
       <select onChange={onchange} name={name}>
         <option value="none" selected disabled hidden className="option">
-          {" "}
-          Space's Category
+          {placeholder}
         </option>
         {options.map((option, i) => (
           <option value={option} key={i}>
