@@ -29,7 +29,6 @@ const LoginPage = ({ addToken, addUser }) => {
     event.preventDefault();
     setName("loading");
     const data = await login(user);
-    console.log(data);
     if (data.token) {
       localStorage.setItem("token", data.token);
       addToken(data.token);
